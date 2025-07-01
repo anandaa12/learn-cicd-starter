@@ -1,8 +1,12 @@
 name: ci
 
-on: 
+on:
+  push:
+    branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
+
 jobs:
   tests:
     name: Tests
@@ -14,11 +18,8 @@ jobs:
 
       - name: Set up Go
         uses: actions/setup-go@v5
-
         with:
           go-version: "1.23.0"
-      - name: Echo  go version
+
+      - name: Echo Go version
         run: go version
-
-
-
