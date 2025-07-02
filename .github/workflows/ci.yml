@@ -23,4 +23,6 @@ jobs:
       - name: Echo Go version
         # run: -cover
         run: go test -cover ./...
+      - name: Style
+        run: test -z $(go fmt ./...)
 
